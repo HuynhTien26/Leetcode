@@ -1,2 +1,2 @@
 # Leetcode
-Lưu trữ Code&amp;Algorithm Idea
+Lưu trữ Code&Algorithm Idea
