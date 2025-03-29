@@ -1,0 +1,18 @@
+Đề bài: Kiểm tra số đối xứng, nếu đúng return true, sai return false
+Ý tưởng
+- Kiểm tra một nửa số nguyên thay vì toàn bộ
+- Đảo ngược một nửa số và so sánh với nửa còn lại
+Thuật toán
+- Kiểm tra số âm và số kết thúc bằng không
+ + x<0 -> return false, số đối xứng không có -
+ + x kết thúc =0 nhưng không phải 0 (10,20,30) ->return false
+- Đảo ngược một nửa số (reversedHalf)
+ + cho nửa số =0, dùng vòng lặp while (x>nửa số)
+  . x%10  -> thêm vào nửa số (reversedHalf) rồi x/=10 giảm x đi 1 chữ số
+   //reversedHalf = reversedHalf * 10 + x % 10;//
+  . Lặp cho tới khi x<=nửa số : đã chạy được 1 nửa số
+- So sánh 2 nửa 
+x==nửa số //x có số chữ số chẵn (1221,...)
+x==nửa số/10 //x có số chữ số lẻ (12321,...)
+Độ phức tạp O(log10(x)) //số có d chữ số chạy khoảng d/2 lần
+Không gian O(1)
