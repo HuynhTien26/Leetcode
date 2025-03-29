@@ -1,0 +1,6 @@
+Đề bài: cho digits là tập các số nguyên, tăng số lên 1 và trả về kết quả
+Ý tưởng
+- Có thể thấy 9+1=10 thì trả về 0 -> dùng vòng lặp for để duyệt từng phần tử trong mảng từ cuối tới đầu
+ + digits[i] <9 ->cho digits[i]++ rồi return
+ +digits[i] =9 ->đặt bằng 0 rồi xử lý tiếp
+- Nếu là tập các số 9 như 999 thì cho 1 lên đầu rồi in ra 
