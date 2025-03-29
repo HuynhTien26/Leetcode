@@ -14,7 +14,7 @@ public:
     ListNode* prev =NULL; //con trỏ trỏ đến node trước đó (ban đầu là NULL)
     ListNode* curr=head; //con trỏ trỏ đến node hiện tại (ban đầu là head)
 //curr luôn chạy trước prev 1 đơn vị
- //Node 1->2->3->None thì Node đầu là prev, 1 (head) là curr
+ //None 1->2->3->None thì Node đầu là prev, 1 (head) là curr
         while (curr !=NULL){
             ListNode* tmp =curr->next; //lưu lại node kế 
 //(NULL)1->2->3->NULL , thì tmp trỏ vào 2->3->NULL
