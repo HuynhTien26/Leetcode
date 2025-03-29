@@ -1,0 +1,9 @@
+Đề: Cho danh sách liên kết đơn, đảo ngược danh sách và trả về danh sách đảo ngược 
+In 12345
+Out 54321
+Ý tưởng
+Dùng kĩ thuật Two Pointers
+None 1->2->3->None
+- khai báo prev là None đầu, curr là 1. 
+- While (curr!=None) return prev
+Ví dụ: khi curr chạy tới None thì while dừng, khi đó prev chạy tới 3 -> return prev (nơi giữ ds đảo ngược)
