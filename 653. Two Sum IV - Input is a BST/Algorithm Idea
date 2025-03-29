@@ -1,0 +1,11 @@
+Đề bài: Cho một cây tìm kiếm nhị phân và một số nguyên, trả về nếu tồn tại hai phần tử trong BST sao cho tổng của chúng bằng , hoặc cách khác root. Nếu có thì trả về true, không thì trả về false
+Ý tưởng
+- Dùng set để lưu trữ các giá trị đã duyệt để kiểm tra nhanh xem có số nào trước đó phù hợp không
+- Nếu tìm thấy 1 cặp số thỏa mãn (k -root->val đã có trong set) trả về true ngay
+- Nếu không thấy thì thêm số hiện tại vào set và kiểm tra tiếp
+Các bước thực hiện
+- Duyệt cây theo đệ quy
+- Nếu node ==Null return false
+- k -root->val != set.end() --> nghĩa là có 1 số n trước đó sao cho n +root->val=k thì return true
+- Chưa tìm thấy, thêm root->val vào set rồi kiểm tra tiếp
+- Tiếp tục duyệt cây với root->left và root->right
