@@ -1,0 +1,35 @@
+Đề bài: cho 2 mảng nums1 và nums2, hợp nhất thành 1 mảng, sắp xếp theo tăng dần.
+Input: nums1 = [1,2,3,0,0,0], m = 3, 
+       nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+
+Ý tưởng & giải thích:
+- Khởi tạo con trỏ cho từng mảng 1 
+
+        int i = m - 1;      // Con trỏ cho phần tử cuối cùng của nums1
+        int j = n - 1;      // Con trỏ cho phần tử cuối cùng của nums2
+        int k = m + n - 1;  // Con trỏ cho vị trí cuối cùng của nums1 (bao gồm phần mở rộng)
+
+Ví dụ:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6], n = 3
+thì 
+i = 2 (nums1[2] = 3)
+j = 2 (nums2[2] = 6)
+k = 5 (vị trí cuối cùng của nums1)
+- Gộp 2 mảng từ cuối lên đầu (do 2 mảng đã được sắp xếp tăng dần nên nếu duyệt từ cuối lên sẽ theo thứ tự tăng dần)
+
+            while (i >= 0 && j >= 0) {
+              if (nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--]; //mums1[k] =nums1[i]; k--;i--;
+            } else {
+                nums1[k--] = nums2[j--];}
+            }
+
++ nums1[i] > nums2[j], thì gán nums1[k] = nums1[i] rồi giảm i và k.
++ nums1[i] <= nums2[j], thì gán nums1[k] = nums2[j] rồi giảm j và k.\
+
+Ví dụ : nums1 = [1,2,3,0,0,0] ; nums2 = [2,5,6]
+so sánh nums1[2] =3 & nums2[2] =6 -> 3<6 
+vậy gán nums1[5]=6 rồi giảm j=1, k=4
+==> nums1 = [1,2,3,0,0,6]
