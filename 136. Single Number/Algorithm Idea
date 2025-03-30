@@ -1,0 +1,13 @@
+Đề bài: tìm số xuất hiện duy nhất 1 lần
+
+Input: nums = [2,2,1]
+Output: 1
+
+Input: nums = [4,1,2,1,2]
+Output: 4
+
+Input: nums = [1]
+Output: 1
+Ý tưởng: 
+C1: Dùng phép XOR (a+a=0/ a+0=a) :khi phần tử xuất hiện lần 2 thì XOR sẽ xóa nó đi
+C2: Dùng sort sắp xếp mảng rồi duyệt từng cặp số liên tiếp để tìm số lẻ
