@@ -1,0 +1,14 @@
+Đề bài: Cho một mảng số nguyên, trả về nếu bất kỳ giá trị nào xuất hiện ít nhất hai lần trong mảng và trả về nếu mọi phần tử khác biệt.
+Input: nums = [1,2,3,1]
+Output: true
+
+Input: nums = [1,2,3,4]
+Output: false
+
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+
+Input: nums = [1]
+Output: false
+
+Ý tưởng: dùng sort để sắp xếp mảng theo tăng dần, rồi dùng vòng for để xét từng phần tử kế bên nhau. Vì đề bài là xuất hiện ít nhất 2 lần thì return true -> chỉ cần so sánh với số kế bên
