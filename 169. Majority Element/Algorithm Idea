@@ -1,0 +1,13 @@
+Đề bài: 
+Cho một mảng nums có kích thước n , trả về phần tử đa số.
+Yếu tố đa số là yếu tố xuất hiện nhiều lần. Bạn có thể giả định rằng phần tử đa số luôn tồn tại trong mảng
+
+Ý tưởng 
+unordered_map<int, int> um; //hash table để tra cứu dữ liệu nhanh chóng mà không cần sắp xếp
+ int số lần xuất hiện cao nhất=0; int số xuất hiện nhiều nhất =nums[0];
+ so sánh trong vòng for( int n :nums){
+ um[n]++; //biến đếm số lần xuất hiện
+ if (biến đếm[n]>số lần xuất hiện cao nhất){
+ số lần xuất hiện cao nhất =biến đếm[n];
+ số xuất hiện nhiều nhất =n;
+kết thúc hàm for -> return số xuất hiện nhiều nhất
