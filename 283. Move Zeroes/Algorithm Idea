@@ -1,0 +1,21 @@
+Đề bài: Cho một mảng số nguyên, di chuyển tất cả các số 0 đến cuối trong khi vẫn duy trì thứ tự tương đối của các phần tử không phải không.
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Input: nums = [0]
+Output: [0]
+
+Ý tưởng
+- Dùng vòng lặp for để duyệt từng phần tử trong mảng nums, gọi int j =0 để theo dõi vị trí phần tử khác 0
+- Dùng điều kiện if(nums[i]!=0){ (swap nums[i],nums[j]) -> j++;
+
+Chạy thử
+Giả sử nums = [0, 1, 0, 3, 12]
+Bước 1: i=0, nums[i]=0 -> không swap //do nums[i]==0 mà điều kiện là nums[i]!=0    j sau khi tăng j=0
+Bước 2: i=1, nums[i]=1 -> swap(1,0) //0 là j// => sau khi swap [1,0,0,3,12]        j sau khi tăng j=1
+Bước 3: i=0, nums[i]=0 -> không swap                                               j sau khi tăng j=1
+Bước 4: i=3, nums[i]=3 -> swap (3,0) =>sau khi swap [1,3,0,0,12]                   j sau khi tăng j=2
+//đẩy số 3 lên vị trí 1
+Bước 5: i=12, nums[i]=12 -> swap (12,0) =>sau khi swap [1,3,12,0,0]                j sau khi tăng j=3
+//đẩy số 12 lên vị trí 2
