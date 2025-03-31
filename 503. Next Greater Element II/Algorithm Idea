@@ -1,0 +1,20 @@
+Đề bài: Cho mảng số nguyên tròn, trả về số lớn hơn kế tiếp cho mỗi phần tử, nếu không có số lớn hơn kế tiếp thì trả về -1
+
+Input: nums = [1,2,1]
+Output: [2,-1,2]
+
+Input: nums = [1,2,3,4,3]
+Output: [2,3,4,-1,4]
+
+Ý tưởng   //độ phức tạp O(n)//
+- Dùng ngăn xếp để lưu trữ các số chưa có số lớn hơn kế tiếp
+- Tạo 1 mảng kết quả vector<int> result(n, -1);  //gán toàn bộ giá trị ban đầu là -1
+- Duyệt vòng lặp 2 lần để giả lập mảng vòng tròn
+       int index = i % n //lấy chỉ số thực tế của phần tử trong mảng
+// Với nums = [1, 2, 3], khi i = 3, index = 3 % 3 = 0, tức là quay lại phần tử 
+
+- Cập nhật phần tử lớn hơn tiếp theo
+       if stack!=empty() và chỉ số đang xét lớn hơn phần tử tại chỉ số trên đỉnh stack --> cập nhật result
+       result[st.top()] = nums[index]
+xóa đi phần tử vừa cập nhật khỏi stack
+- Đẩy chỉ số vào stack, chỉ đẩy chỉ số của phần tử trong vòng lặp đầu (i<n) nếu không có điều kiện, push sẽ đẩy lại các phần tử cũ gây lặp vô hạn
