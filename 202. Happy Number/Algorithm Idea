@@ -1,0 +1,23 @@
+Đề bài: Tìm số hạnh phúc
+1 số là số hạnh phúc khi từng số trong đó bình phương + nhau =1
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+Input: n = 2
+Output: false
+
+Ý tưởng: có thể dùng thuật toán rùa và thỏ để phát hiện chu trình trong dãy số
+- Cho rùa đi từng bước
+- Cho thỏ đi 2 bước
+Nếu rùa và thỏ gặp nhau -> có vòng lặp
+Nếu thỏ đến được 1 -> số hạnh phúc
+
+Hoặc cũng có thể dùng đệ quy kết hợp thuật toán rùa và thỏ. 
+- Nếu dùng thuật toán rùa và thỏ thôi -> hiệu quả cao, không dùng bộ nhớ phụ
+- Nếu dùng đệ quy -> code ngắn gọn nhưng có thể làm tràn ngăn xếp nếu số quá lớn
