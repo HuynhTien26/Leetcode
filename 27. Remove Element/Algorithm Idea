@@ -1,0 +1,16 @@
+Đề bài: Cho một mảng nums, xóa đi phần tử x khi nhập val=x
+
+Input: nums = [3,2,2,3], val = 3
+Output: 2, nums = [2,2,_,_]
+
+Input: nums = [0,1,2,2,3,0,4,2], val = 2
+Output: 5, nums = [0,1,4,0,3,_,_,_]
+
+Ý tưởng
+- Dùng mảng duyệt ngược với vòng for rồi dùng erase để xóa đi 
+ nums.erase(nums.begin() + i);
+/*với nums.begin() trả về một iterator trỏ đến phần tử đầu tiên của vector numbers
+  nums.begin() + i: Cộng 1 số nguyên i vào iterator nums.begin(), là đang di chuyển iterator đến vị trí có chỉ số i
+Ví dụ: nếu i=2-> nums.begin() +i sẽ trỏ đến phần tử có chỉ số 2 (vị trí/index)
+  nums.erase(iterator): xóa phần tử mà iterator trỏ đến
+  nums.erase(nums.begin() + i): Xóa phần tử tại chỉ số i trong nums
