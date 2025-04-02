@@ -1,0 +1,62 @@
+Đề bài: Cho 2 danh sách liên kết số nguyên không âm, các chữ số được lưu theo thứ tự ngược lại. 2 dãy không có số 0 đứng đầu, ngoại trừ dãy chỉ có 0. Tính tổng và trả về kết quả dảo ngược.
+Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+
+Input: l1 = [0], l2 = [0]
+Output: [0]
+
+Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+Output: [8,9,9,9,0,0,0,1]
+
+Ý tưởng:
+- Tạo 1 DSLK mới để lưu biến kết quả, dùng vòng lặp cộng từng phần tử 1 của từng dãy với nhau.
+- Tạo một biến nhớ để lưu trữ số khi tổng >9 (vd 10, 11,...)
+
+Minh họa: 
+Đầu vào 
+l1 = [2 -> 4 -> 3]  (342)
+l2 = [5 -> 6 -> 4]  (465)
+
+Quá trình tính 
+2+5=7 (carry =0) ->kq [7]
+4+6=10 (carry =1) ->kq [7->0]
+3+4+carry(1) =8 (carry=0) -> kq [7->0->8]
+
+Kết quả trả về
+[7 -> 0 -> 8]  (807)
+
+Cách chạy từng bước:
+Bước 1: đầu vào l1=[], l2=[]
+Bước 2: chạy từng dòng code
+- Khởi tạo danh sách kết quả và các biến
+Bước 3: chạy vòng lặp
+
+(1)
+int sum = carry;
+if (l1) { sum += l1->val; l1 = l1->next; }  // sum = 2
+if (l2) { sum += l2->val; l2 = l2->next; }  // sum = 2 + 5 = 7
+carry = sum / 10;  // carry = 7 / 10 = 0
+current->next = new ListNode(sum % 10);  // new ListNode(7)
+current = current->next;
+==> kết thúc l1 trỏ đến 4, l2 trỏ đến 6, carry=0;
+
+(2)
+int sum = carry;
+if (l1) { sum += l1->val; l1 = l1->next; }  // sum = 4
+if (l2) { sum += l2->val; l2 = l2->next; }  // sum = 4 + 6 = 10
+carry = sum / 10;  // carry = 10 / 10 = 1
+current->next = new ListNode(sum % 10);  // new ListNode(0)
+current = current->next;
+==> kết thúc l1 trỏ đến 3, l2 trỏ đến 4, carry=1;
+
+(3)
+int sum = carry;  // sum = 1
+if (l1) { sum += l1->val; l1 = l1->next; }  // sum = 1 + 3 = 4
+if (l2) { sum += l2->val; l2 = l2->next; }  // sum = 4 + 4 = 8
+carry = sum / 10;  // carry = 8 / 10 = 0
+current->next = new ListNode(sum % 10);  // new ListNode(8)
+current = current->next;
+==> kết quả sau chạy: l1 & l2 đều ==NULL, carry =0 -> không cần thêm node nào nữa =>kết thúc vòng lặp
+
+Bước 4 trả về kết quả
