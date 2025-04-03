@@ -1,0 +1,43 @@
+Đề bài: Cho 1 mảng, nhập k. Trả về mảng đã xóa đi phần tử ở vị trí k và trong mảng không chứa phần tử lặp lại lần thứ 2
+
+Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+
+Ý tưởng
+- Gọi 1 biến đếm số lượng phần tử duy nhất /lặp lại 1 lần duy nhất
+- Dùng vòng lặp để so sánh từng phần tử với nhau, nếu không trùng nhau -> lưu vào vị trí k
+- Dùng nums.resize(k) để xóa đi phần tử dư thừa
+
+//resize(k) sẽ chạy kiểu: cắt bớt phần tử nếu k < kích thước ban đầu, thêm phần tử nếu k>kích thước ban đầu
+Trong bài toán trên, sau khi tìm được k, chỉ muốn giữ lại k phần tử đầu tiên, nên dùng nums.resize(k) để loại bỏ phần còn lại
+VD: cho mảng nums=[1,1,2,2,3,4,4,5];
+int k=5; chỉ muốn giữ lại 5 phần tử đầu
+nums.resize(k); //xóa đi các phần tử từ index 5 trở đi ==> output 1 1 2 2 3
+
+Chạy thử từng bước:
+            vị trí bắt đầu    k  i
+Ví dụ mảng ban đầu là nums = {1, 1, 2, 3, 3}
+
+(1) vòng for i=1
++ So sánh nums[1] (1) ==nums[k-1] (nums[0] = 1) -> bỏ qua (trùng), k = 1 không thay đổi
+
+(2) vòng for i=2
++ So sánh nums[2] (2) !=nums[k-1] (nums[0] = 1) -> không trùng
++ cập nhật nums[k] = nums[2] ->nums[1] =2
++ tăng k=2
+==> trạng thái mảng thành 1 2 2 3 3
+
+(3) vòng for i=3
++ So sánh nums[3] (3) !=nums[k-1] (nums[1] = 2) -> không trùng
++ Cập nhập nums[k] = nums[3] ->nums[2] =3
++ Tăng k =3
+==> trạng thái mảng 1 2 3 3 3 
+
+(4) vòng lặp for i=4
++ So sánh nums[4] (3) !=nums[k-1] (nums[2] = 3) -> bỏ qua (trùng), k vẫn = 3
+
+Kết thúc vòng lặp k=3 tức chỉ có 3 phần tử duy nhất
+=> dùng hàm resize(k) thì mảng còn 1 2 3
