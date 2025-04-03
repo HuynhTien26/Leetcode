@@ -1,0 +1,29 @@
+Đề bài: Cho 2 chuỗi string haystack và needle. Kiểm tra xem phần từ trong needle có trong haystack không. Nếu có trả về vị trí xuất hiện đầu tiên của từ đó trong haystack, nếu không return -1
+
+Input: haystack = "sadbutsad", needle = "sad"
+Output: 0
+
+Input: haystack = "leetcode", needle = "leeto"
+Output: -1
+
+Ý tưởng
+- Dùng vòng lặp for để chạy kiểm tra trong haystack với needle.
+- Dùng substr trong string để trả về chuỗi con từ haystack.
+- Xét các điều kiện if
+ +  needle.length() ==0 return 0
+ +  needle.length() > haystack.length() return -1
+
+//Giải thích substr
+VD haystack.substr(i, m) : sẽ trả vveef một chuỗi con từ haystack
+i: vị trí bắt đầu của chuỗi (trong vòng for như code hoặc đặt biến int i=...)
+m: độ dài của chuỗi con muốn lấy từ vị trí i. Nếu m> số phần tử còn lại từ vị trí i đến cuỗi chuỗi thì chuỗi con sẽ có độ dài bằng số phần tử còn lại
+Nếu m=0  trả về chuỗi rỗng
+Nếu i vượt quá độ dài chuỗi, phương thức sẽ ném ra lỗi (out-of-range)
+
+Vd cụ thể như: 
+string haystack= "hello";
+int i=1;
+int m=3;
+string res =haystack.substr(i,m); or string res =haystack.substr(1,3); //lấy ra 3 số từ vị trí 1
+cout<<res;
+==> Output: ello
