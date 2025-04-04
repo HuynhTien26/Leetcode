@@ -1,0 +1,17 @@
+Đề bài: Cho chuỗi kí tự, trả về độ dài của từ cuối
+
+Input: s = "Hello World"
+Output: 5
+Explanation: The last word is "World" with length 5.
+
+Input: s = "   fly me   to   the moon  "
+Output: 4
+Explanation: The last word is "moon" with length 4.
+
+Input: s = "luffy is still joyboy"
+Output: 6
+Explanation: The last word is "joyboy" with length 6.
+
+Ý tưởng
+- Dùng stringstream để biến xâu s thành 1 luồng rồi tách từng phần tử trong luồng bởi dấu cách.
+- Tạo một tmp để lưu khi duyệt từng phần tử trong s vào
