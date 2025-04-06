@@ -11,12 +11,12 @@ Output: "10101"
 Nhị phân	Thập phân
 "0"	         0
 "1"	         1
-"10"	       2
-"11"	       3
-"100"	       4
-"101"	       5
-"110"	       6
-"111"	       7
+"10"	        2
+"11"	        3
+"100"	        4
+"101"	        5
+"110"	        6
+"111"	        7
 ```
 
 **Ý tưởng**
@@ -50,7 +50,7 @@ Với code
 - '0' để chuyển từ số thành kí tự
   + 0 + '0' = '0'
   + 1 + '0' = '1'
-- + result cuối để thêm số/bit mới vào đầu kết quả vì đang duyệt từ phải -> trái
+- cộng result cuối để thêm số/bit mới vào đầu kết quả vì đang duyệt từ phải -> trái
 VD
 ```cpp
 sum = 1 + 1 = 2
