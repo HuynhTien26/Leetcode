@@ -15,7 +15,7 @@ Output: false
   - Cây p và q cùng rỗng -> return true
   - Nếu 2 cây không rỗng:
     - `(p->val == q->val)` hai gốc (root) hiện tại phải giống nhau
-    - Không chỉ cần 2 root giống nhau mà cả cây con trái và phải cũng đều phải hoàn toàn giống nhau
+    - Không chỉ cần 2 root giống nhau mà cả cây con trái và phải cũng đều phải hoàn toàn giống nhau, gọi đệ quy cho cây con trái và phải
     `isSameTree(p->left, q->left) && isSameTree(p->right, q->right);`
 - Cả hai điều kiện (trái giống trái và phải giống phải) đều phải đúng thì kết quả mới là true
 - Nếu chỉ một bên không giống (hoặc cả hai bên không giống), kết quả sẽ là false
