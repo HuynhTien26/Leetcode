@@ -10,12 +10,14 @@ Input: digits = "2"
 Output: ["a","b","c"]
 ```
 **Ý tưởng**
+
 **C1**
 - Sử dụng **hàng đợi** để lưu các chữ cái
 - Dùng unordered _map <> pad để sao lưu kí tự chữ số và chữ cái của nó
 - Duyệt qua từng chữ số trong digits
 - Sau khi duyệt hết các chữ số, queue sẽ chứa các tổ hợp chữ cái cần thiết
 - Lấy tất cả chuỗi từ queue và thêm vào 1 vector<string> để trả về kết quả
+
 **C2**
 - Dùng một mảng tạm thời temp để lưu kết quả sau mỗi vòng lặp rồi gán vào result
 - Sau đó dùng 2 for lồng nhau để kết hợp từng kí tự lại
