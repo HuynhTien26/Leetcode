@@ -7,6 +7,6 @@ public:
    t	       n + 1	       t[n]
   */
 		t[i+1] += t[i]-s[i]; // t[i+1]=t[i+1]+(t[i]−s[i]) --> chuyển sự khác nhau giữa s và t về cuối, những phần tử giống nhau sẽ triệt tiêu nhau
-      return t[t.size()-1]; //t[t.size()-1] chứa kí tự dư thừa nên trả về nó
+      return t.back();//trả về phần tử cuối do phép tính trên đẩy phần tử dư thừa về cuối
     }
 };
