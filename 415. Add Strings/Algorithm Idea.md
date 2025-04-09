@@ -18,6 +18,7 @@ Output: "0"
 - Cộng các số *int sum = digit 1 + digit2 + carry*
 - *result += char(sum % 10 + '0');* lấy chữ số hàng đơn vị (sum % 10) và chuyển sang ký tự → thêm vào result
 - carry = sum / 10;
+
 **Giải thích cách chạy dòng tính tổng**
 digit1 = 9, digit2 = 8, carry = 1
 → sum = 9 + 8 + 1 = 18
