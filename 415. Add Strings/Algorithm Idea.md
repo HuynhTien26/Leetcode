@@ -20,7 +20,8 @@ Output: "0"
 - carry = sum / 10;
 
 **Giải thích cách chạy dòng tính tổng**
+
 digit1 = 9, digit2 = 8, carry = 1
 → sum = 9 + 8 + 1 = 18
-sum % 10 = 8 → đây là số hàng đơn vị → thêm vào kết quả
-sum / 10 = 1 → đây là số nhớ (carry) → để dùng cho bước tiếp theo
++ sum % 10 = 8 → đây là số hàng đơn vị → thêm vào kết quả
++ sum / 10 = 1 → đây là số nhớ (carry) → để dùng cho bước tiếp theo
