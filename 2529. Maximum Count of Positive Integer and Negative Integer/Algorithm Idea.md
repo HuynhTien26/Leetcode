@@ -15,7 +15,9 @@ Output: 4
 Explanation: There are 4 positive integers and 0 negative integers. The maximum count among them is 4.
 ```
 **Ý tưởng**
-- Dùng vòng lặp for duyệt từng phần tử trong mảng
+- Dùng vòng lặp for duyệt từng phần tử trong mảng (for (int i=0;...))
   - if(nums[i] >0) soduong++;
   - if(nums[i] <0) soam++;
 - return max(soam, so duong)
+
+- Hoặc có thể dùng vòng lặp for(int num:nums)
