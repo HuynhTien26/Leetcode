@@ -14,3 +14,5 @@ Explanation: There are two common elements in the array 2 and 3 out of which 2 i
   - Nếu số bên nums1 < nums2 -> tăng i
   - Nếu số bên nums1 > nums2 -> tăng j
 - Kết thúc vòng while mà không tìm thấy số chung nhỏ nhất -> return -1
+
+(- Có thể dùng 2 for lồng nhau nhưng sẽ vượt quá thời gian chạy) 
